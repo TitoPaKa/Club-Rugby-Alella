@@ -16,5 +16,13 @@ Primera versió funcional de la nova web del Club Rugby Alella, amb:
 
 ## Desplegament a Railway
 
-Aquest projecte és un lloc estàtic (HTML/CSS/JS) i es desplega amb `Staticfile` al directori arrel (`root: .`).
+Aquest projecte és un lloc estàtic (HTML/CSS/JS), sense SSR ni servidor Node.
+
+Configuració exacta per Railway (Railpack):
+
+- **Build Command**: `npm run build`
+- **Start Command**: *(buit; no aplica per lloc estàtic)*
+- **Variable**: `RAILPACK_SPA_OUTPUT_DIR=dist`
+
+El `Staticfile` queda configurat amb `root: dist` per servir exactament la sortida del build.
 Això evita l'error de Railpack **"No start command detected"** perquè no necessita `start` de Node per servir la web.
